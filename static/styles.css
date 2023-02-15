@@ -1,0 +1,52 @@
+@font-face {
+    font-family: SamsungOne;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-400___6d3e20551338d043a1bee670df8e7406.woff2),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-400___d6736f5c1706226ea7631028edab6a8e.woff),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-400___c6b0ffc5071f7f2604895d469533b097.ttf)
+}
+
+@font-face {
+    font-family: SamsungOne;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-700___d4d24334ce273547d7065a226338b0c0.woff2),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-700___0b6a93dd43391de7a858ac1ac173b2b1.woff),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-700___ebc5248764129cad0ef43293728df3bd.ttf)
+}
+
+@font-face {
+    font-family: SamsungSharpSans;
+    font-weight: lighter;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-regular-webfont___11f8e6c34c89213b5cc37e7a2dc53321.woff2),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-regular-webfont___c88f2832e3d0d0d5d9ff587609e7251a.woff),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-regular-webfont___0c5dbd0835c0a57e08e97a5299eb2ee0.ttf)
+}
+
+@font-face {
+    font-family: SamsungSharpSans;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-medium-webfont___dbd17c4ef6b12f9731dfd871e13c5d3f.woff2),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-medium-webfont___a8479f926d34201b0a3a1a5ececd22b3.woff),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-medium-webfont___a10dd3cea9620c068dc2a5694020077e.ttf)
+}
+
+@font-face {
+    font-family: SamsungSharpSans;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-bold-webfont___02a4ea478b0c3cb854072a84177e5f66.woff2),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-bold-webfont___746139a7d81479b81f41f6ff3ea6b35e.woff),url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/samsungsharpsans-bold-webfont___304aac9e89bc706fba86da8d7b4c5c0b.ttf)
+}
+
+@font-face {
+    font-family: samsungIcon;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url(https://samsungbr.vtexassets.com/arquivos/samsungIcon.woff2.css) format("woff2"),url(https://samsungbr.vtexassets.com/arquivos/samsungIcon.woff.css) format("woff")
+}
+
+
+body{
+    font-family: SamsungOne,arial,sans-serif;;
+}

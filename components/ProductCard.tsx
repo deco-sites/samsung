@@ -32,51 +32,46 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full p-2 mb-5"
+      class="w-full p-2 mb-5 bg-white rounded-[20px]"
     >
       <a href={url}>
-        {img && img.url && (
-          <Picture>
-            {/* 2:3 aspect-ratio*/}
-            <Source
-              media="(max-width: 639px)"
-              src={img.url}
-              width={187}
-              height={281}
-            />
-            <Source
-              media="(min-width: 640px)"
-              src={img.url}
-              width={312}
-              height={468}
-            />
-            <Image
-              class="w-full max-w-full h-auto"
-              src={img.url}
-              alt={img.alternateName}
-              width={322}
-              height={483}
-              loading="lazy"
-              decoding="async"
-            />
-          </Picture>
-        )}
-        <div class="mt-3">
-          {name && (
+        {name && (
             <div
-              class="block text-sm overflow-hidden whitespace-nowrap uppercase mb-3"
+              class="block overflow-hidden whitespace-nowrap mb-3 text-center font-bold"
               style={{ textOverflow: "ellipsis" }}
               href={url}
             >
               {name.replace(/(.*)(\-).*$/, "$1$2")}
             </div>
           )}
-          <div class="text-xs flex justify-start gap-2 mb-1">
-            {listPrice && (
-              <span class="text-gray-400 line-through">
-                R$ {listPrice.price.toFixed(2)}
-              </span>
-            )}
+        {img && img.url && (
+          <Picture>
+            {/* 2:3 aspect-ratio*/}
+            <Source
+              media="(max-width: 639px)"
+              src={img.url}
+              width={180}
+              height={180}
+            />
+            <Source
+              media="(min-width: 640px)"
+              src={img.url}
+              width={222}
+              height={222}
+            />
+            <Image
+              class="w-full max-w-full h-auto"
+              src={img.url}
+              alt={img.alternateName}
+              width={180}
+              height={180}
+              loading="lazy"
+              decoding="async"
+            />
+          </Picture>
+        )}
+        <div class="mt-3 text-center">
+          <div class="text-[18px] flex justify-center gap-2 mb-1">
             {price && (
               <span class="font-bold">
                 R$ {typeof price === "number" ? price.toFixed(2) : price}
@@ -91,7 +86,7 @@ export default function ProductCard({
         </div>
       </a>
       {seller && (
-        <div class="mt-2">
+        <div class="mt-2 flex justify-center">
           <AddToCart
             class="w-full text-white text-xs uppercase py-2 cursor-pointer"
             skuId={productID}

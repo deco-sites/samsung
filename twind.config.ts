@@ -36,10 +36,6 @@ const options: Omit<Options, "selfURL"> = {
         "primary-red-dark": "#A1061A",
       },
     },
-    fontFamily: {
-      sans: ["Lato", "sans-serif"],
-      serif: ["inherit", "serif"],
-    },
     screens: {
       sm: "640px",
       md: "768px",

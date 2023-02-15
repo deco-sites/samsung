@@ -13,9 +13,9 @@ export default function ProductShelf({
   products,
 }: Props) {
   return (
-    <section class="max-w-[1400px] w-full p-2 md:p-0 mx-auto">
-      {title && <h2 class="text-center mb-8 text-lg md:text-2xl">{title}</h2>}
-      <div class="grid grid-cols-2 md:grid-cols-4 md:gap-4">
+    <section class="max-w-[1440px] w-full p-6 md:p-0 md:pt-6 mx-auto bg-[#f7f7f7] mt-[-54px]">
+      {title && <h2 class="text-center font-bold mb-8 text-lg md:text-[38px]">{title}</h2>}
+      <div class="grid grid-cols-1 md:grid-cols-4 md:gap-4">
         {products?.map((product, index) => {
           return <ProductCard key={index} {...product} />;
         })}

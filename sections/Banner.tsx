@@ -15,14 +15,14 @@ export default function Banner(
   { imgSrc, alt, text, title, subtitle, link, CTA }: Props,
 ) {
   return (
-    <section class="w-full mb-8">
+    <section class="w-full max-w-[1440px] m-auto mb-8">
       <div class="relative">
         <Picture class="inset-0" preload>
           <Source
             media="(max-width: 767px)"
             src={imgSrc.mobile}
-            width={436}
-            height={377}
+            width={414}
+            height={621}
             fetchPriority="high"
           />
           <Source
@@ -40,22 +40,22 @@ export default function Banner(
           />
         </Picture>
 
-        <div class="absolute inset-0 md:flex md:flex-col md:items-center md:justify-center text-[#4d5b31] m-[4vh] md:m-auto md:text-[#f2e9d8] md:w-[28vw]">
+        <div class="absolute inset-0 md:flex md:flex-col md:items-start md:justify-center text-white m-[4vh] m-auto md:m-0 md:w-[50vw] md:px-[40px]">
           <a
             href=""
-            class="md:flex md:flex-col md:items-center md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
+            class="md:flex md:flex-col md:items-start md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
           >
-            <div class="font-sans text-xs md:text-sm leading-4 w-[37.68vw] md:w-auto md:text-center">
-              <span>{text}</span>
-            </div>
-            <h2 class="uppercase font-sans text-2xl leading-8 md:text-3xl tracking-wider ">
+            <h2 class="font-sans mb-4 font-bold text-center md:text-left text-[30px] leading-8 md:text-[40px] tracking-wider ">
               {title}
             </h2>
-            <div class="font-sans text-xs md:text-sm leading-4 md:pt-2.5 w-[37.68vw] md:w-auto md:text-center">
+            <div class="font-sans text-[18px] md:text-sm md:pt-2.5 text-center md:text-left mb-2.5">
               <span>{subtitle}</span>
             </div>
+            <div class="font-sans text-[16px] md:text-sm text-center md:text-left">
+              <span>{text}</span>
+            </div>
           </a>
-          <div class="mt-3 md:mt-5 text-[10px] md:text-xs">
+          <div class="flex justify-center md:justify-items-start mt-3 md:mt-5 text-[10px] md:text-xs">
             <a
               href={link}
               class="uppercase md:pb-2.5 pb-1.5 border-b border-[#4d5b31] md:border-[#f2e9d8] hover:pb-0 transition-all duration-150 ease"

@@ -355,7 +355,21 @@ const manifest: DecoManifest = {
           "alerts": {
             "type": "array",
             "items": {
-              "type": "string",
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "text",
+                "link",
+              ],
             },
             "title": "Alerts",
           },

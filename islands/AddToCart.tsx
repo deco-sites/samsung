@@ -32,14 +32,13 @@ export default function AddToCart({ skuId, sellerId, large }: Props) {
   return (
     <Button
       class={`${
-        large ? "p-4 md:text-lg w-64 h-14" : "px-6 py-2 w-full"
-      } bg-primary-red hover:bg-primary-red-dark focus:ring-1 focus:outline-none focus:ring-primary-red-light uppercase`}
+        large ? "p-4 md:text-lg w-64 h-14" : "px-6 py-2"
+      } uppercase bg-black px-[30px] py-2.5`}
       onClick={onAddItem}
-      fit="container"
-      loading={isAddingToCart.value}
+      loading={false}
       disabled={loading.value}
     >
-      Adicionar à Sacola
+      Comprar Agora
     </Button>
   );
 }

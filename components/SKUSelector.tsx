@@ -12,6 +12,7 @@ const onChange = {
 export default function SKUSelector(
   { product: { isVariantOf, url: currentUrl } }: Props,
 ) {
+  console.log(isVariantOf)
   const allProperties = (isVariantOf?.hasVariant ?? [])
     .flatMap(({ additionalProperty = [], url }) =>
       additionalProperty.map((property) => ({ property, url }))
@@ -31,7 +32,7 @@ export default function SKUSelector(
   }, {} as Record<string, Record<string, string>>);
 
   return (
-    <div class="border border-gray-300 flex flex-row justify-between px-3 py-2 md:w-1/4">
+    <div class="border border-gray-300 flex flex-col justify-between px-3 py-2 md:w-1/4">
       {Object.keys(possibilities).map((name) => (
         <>
           <label class="font-bold" for={name}>{name}</label>
