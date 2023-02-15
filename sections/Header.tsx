@@ -59,6 +59,8 @@ function Navbar() {
         <div class="flex justify-center md:justify-between pl-12 h-14">
           <NavItem href="/">Loja Online</NavItem>
           <NavItem href="/">Telefonia</NavItem>
+          <NavItem href="/">TV & AV</NavItem>
+          <NavItem href="/">Eletrodomésticos</NavItem>
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
           <a href="#" class="h-12 w-12 flex justify-center items-center">

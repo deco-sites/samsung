@@ -4,6 +4,15 @@ interface Props {
   product: Product;
 }
 
+interface properties {
+  property?: property[]
+}
+
+interface property{
+  name?: string;
+  values?: string[];
+}
+
 // Navigates the user the the choosen sku
 const onChange = {
   onchange: "(function(e){  window.location.href = e.target.value; })(event)",
@@ -12,7 +21,7 @@ const onChange = {
 export default function SKUSelector(
   { product: { isVariantOf, url: currentUrl } }: Props,
 ) {
-  console.log(isVariantOf)
+
   const allProperties = (isVariantOf?.hasVariant ?? [])
     .flatMap(({ additionalProperty = [], url }) =>
       additionalProperty.map((property) => ({ property, url }))
@@ -32,10 +41,10 @@ export default function SKUSelector(
   }, {} as Record<string, Record<string, string>>);
 
   return (
-    <div class="border border-gray-300 flex flex-col justify-between px-3 py-2 md:w-1/4">
+    <div class="flex flex-col justify-between py-2 md:w-1/4">
       {Object.keys(possibilities).map((name) => (
-        <>
-          <label class="font-bold" for={name}>{name}</label>
+        <div class="flex flex-col gap-4">
+          <label class="font-semibold text-[22px]" for={name}>{name}</label>
           <select id={name} {...onChange}>
             {Object.entries(possibilities[name]).map(([url, value]) => {
               return (
@@ -45,7 +54,7 @@ export default function SKUSelector(
               );
             })}
           </select>
-        </>
+        </div>
       ))}
     </div>
   );

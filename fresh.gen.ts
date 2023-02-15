@@ -190,18 +190,31 @@ const manifest: DecoManifest = {
                 "alt": {
                   "type": "string",
                   "title": "Alt",
-                  "description": "Image alt text",
                 },
                 "href": {
                   "type": "string",
                   "title": "Href",
-                  "description": "When you click you go to",
+                },
+                "title": {
+                  "type": "string",
+                  "title": "Title",
+                },
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "cta": {
+                  "type": "string",
+                  "title": "Cta",
                 },
               },
               "required": [
                 "src",
                 "alt",
                 "href",
+                "title",
+                "text",
+                "cta",
               ],
             },
             "title": "Images",

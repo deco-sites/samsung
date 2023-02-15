@@ -31,9 +31,7 @@ export default function AddToCart({ skuId, sellerId, large }: Props) {
 
   return (
     <Button
-      class={`${
-        large ? "p-4 md:text-lg w-64 h-14" : "px-6 py-2"
-      } uppercase bg-black px-[30px] py-2.5`}
+      class='bg-black px-[30px] py-2.5'
       onClick={onAddItem}
       loading={false}
       disabled={loading.value}

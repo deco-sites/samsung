@@ -22,8 +22,8 @@ const variants = {
 };
 
 const sizes = {
-  small: "font-medium text-sm px-3 py-2 h-9",
-  large: "font-medium text-lg px-4 py-3 h-12",
+  small: "font-medium text-sm px-[30px] h-9",
+  large: "font-medium text-lg h-12",
 };
 
 const fits = {
