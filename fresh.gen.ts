@@ -14,10 +14,11 @@ import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
 import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/ProductInformation.tsx";
-import * as $$5 from "./islands/SearchBar.tsx";
-import * as $$6 from "./islands/SearchControls.tsx";
-import * as $$7 from "./islands/Slider.tsx";
+import * as $$4 from "./islands/NewSearch.tsx";
+import * as $$5 from "./islands/ProductInformation.tsx";
+import * as $$6 from "./islands/SearchBar.tsx";
+import * as $$7 from "./islands/SearchControls.tsx";
+import * as $$8 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannnerGrid.tsx";
 import * as $$$2 from "./sections/Button.story.tsx";
@@ -60,10 +61,11 @@ const manifest: DecoManifest = {
     "./islands/CartButton.tsx": $$1,
     "./islands/CartModal.tsx": $$2,
     "./islands/LiveControls.tsx": $$3,
-    "./islands/ProductInformation.tsx": $$4,
-    "./islands/SearchBar.tsx": $$5,
-    "./islands/SearchControls.tsx": $$6,
-    "./islands/Slider.tsx": $$7,
+    "./islands/NewSearch.tsx": $$4,
+    "./islands/ProductInformation.tsx": $$5,
+    "./islands/SearchBar.tsx": $$6,
+    "./islands/SearchControls.tsx": $$7,
+    "./islands/Slider.tsx": $$8,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
@@ -365,31 +367,99 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "alerts": {
+          "searchbar": {
+            "title": "Search Bar",
+            "type": "object",
+            "properties": {
+              "placeholder": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Placeholder",
+                "description": "Search bar default placeholder message",
+                "default": "What are you looking for?",
+              },
+              "action": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Page path",
+                "description":
+                  "When user clicks on the search button, navigate it to",
+                "default": "/s",
+              },
+              "name": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Term name",
+                "description":
+                  "Querystring param used when navigating the user",
+                "default": "q",
+              },
+              "query": {
+                "type": [
+                  "string",
+                  "null",
+                ],
+                "title": "Query",
+              },
+            },
+            "required": [],
+          },
+          "navItems": {
             "type": "array",
             "items": {
+              "title": "Item",
               "type": "object",
               "properties": {
-                "text": {
+                "label": {
                   "type": "string",
-                  "title": "Text",
+                  "title": "Label",
                 },
-                "link": {
+                "href": {
                   "type": "string",
-                  "title": "Link",
+                  "title": "Href",
+                },
+                "children": {
+                  "title": "Children",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": [
+                          "string",
+                          "null",
+                        ],
+                        "title": "Label",
+                      },
+                      "href": {
+                        "type": [
+                          "string",
+                          "null",
+                        ],
+                        "title": "Href",
+                      },
+                    },
+                    "required": [],
+                  },
                 },
               },
               "required": [
-                "text",
-                "link",
+                "label",
+                "href",
               ],
             },
-            "title": "Alerts",
+            "title": "Navigation items",
+            "description":
+              "Navigation items used both on mobile and desktop menus",
           },
         },
-        "required": [
-          "alerts",
-        ],
+        "required": [],
       },
       "outputSchema": null,
     },

@@ -3,6 +3,8 @@ import type { Options } from "$fresh/plugins/twind.ts";
 
 const options: Omit<Options, "selfURL"> = {
   plugins: {
+    "fillwhite": {"fill": "white"},
+    "fillblack": {"fill": "black"},
     "slide-left": animation("0.4s ease normal", {
       from: { transform: "translateX(100%)" },
       to: { transform: "translateX(0)" },
