@@ -56,8 +56,8 @@ export default function ProductCard({
             <Source
               media="(min-width: 640px)"
               src={img.url}
-              width={222}
-              height={222}
+              width={180}
+              height={180}
             />
             <Image
               class="w-full max-w-full h-auto"

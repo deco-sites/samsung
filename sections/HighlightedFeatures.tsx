@@ -2,18 +2,9 @@ import { Image as LiveImage } from "$live/std/ui/types/Image.ts";
 import Image from "$live/std/ui/components/Image.tsx";
 
 export interface Feature {
-  /**
-   * @description Image src
-   */
   src: LiveImage;
-  /**
-   * @description Title
-   */
+  link: string;
   title: string;
-  /**
-   * @description Description and Image alt text
-   */
-  description: string;
 }
 
 export interface Props {
@@ -24,24 +15,23 @@ export default function HighlightedFeatures(
   { features }: Props,
 ) {
   return (
-    <section class="bg-gray-200 flex flex-row flex-wrap py-2 justify-center">
-      {features.map(({ src, title, description }) => (
-        <div key={title} class="w-1/2 md:w-1/5 p-6 flex flex-col items-center">
+    <section class="max-w-[1440px] m-auto flex flex-row flex-wrap py-8 justify-between items-center mt-[-54px]">
+      {features.map(({ src, title, link }) => (
+        <a href={link} key={title} class="p-6 flex flex-col items-center">
           <Image
             sizes="(min-width: 59px) 59px, 100vw"
             data-main-image=""
             style="object-fit:cover;opacity:1"
-            width={59}
-            height={31}
+            width={100}
+            height={100}
             src={src}
-            alt={description}
+            alt={title}
             class=""
             decoding="async"
             loading="lazy"
           />
           <span class="font-bold uppercase text-center mt-3">{title}</span>
-          <p class="text-xs text-center">{description}</p>
-        </div>
+        </a>
       ))}
     </section>
   );

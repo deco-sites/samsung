@@ -1,21 +1,11 @@
-import FooterAccordion, { sections } from "../components/FooterAccordion.tsx";
+import FooterAccordion from "../components/FooterAccordion.tsx";
 import Icon from "../components/ui/Icon.tsx";
 
 export default function Footer() {
   return (
-    <footer class="w-full">
-      <div class="hidden md:block bg-[#353535] w-full">
-        <div class="flex justify-between p-8 w-9/12 mx-auto">
-          {sections.map(({ label, content }) => (
-            <div class="flex flex-col mr-12">
-              <span class="text-white uppercase mb-4 text-xs">{label}</span>
-              {content}
-            </div>
-          ))}
-        </div>
-      </div>
+    <footer class="w-full max-w-[1440px] m-auto">
 
-      <div class="md:hidden w-full">
+      <div class="block w-full">
         <FooterAccordion />
       </div>
 

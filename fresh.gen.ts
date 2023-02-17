@@ -367,49 +367,6 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
-          "searchbar": {
-            "title": "Search Bar",
-            "type": "object",
-            "properties": {
-              "placeholder": {
-                "type": [
-                  "string",
-                  "null",
-                ],
-                "title": "Placeholder",
-                "description": "Search bar default placeholder message",
-                "default": "What are you looking for?",
-              },
-              "action": {
-                "type": [
-                  "string",
-                  "null",
-                ],
-                "title": "Page path",
-                "description":
-                  "When user clicks on the search button, navigate it to",
-                "default": "/s",
-              },
-              "name": {
-                "type": [
-                  "string",
-                  "null",
-                ],
-                "title": "Term name",
-                "description":
-                  "Querystring param used when navigating the user",
-                "default": "q",
-              },
-              "query": {
-                "type": [
-                  "string",
-                  "null",
-                ],
-                "title": "Query",
-              },
-            },
-            "required": [],
-          },
           "navItems": {
             "type": "array",
             "items": {
@@ -454,9 +411,7 @@ const manifest: DecoManifest = {
                 "href",
               ],
             },
-            "title": "Navigation items",
-            "description":
-              "Navigation items used both on mobile and desktop menus",
+            "title": "Nav Items",
           },
         },
         "required": [],
@@ -478,23 +433,20 @@ const manifest: DecoManifest = {
                   "format": "image-uri",
                   "type": "string",
                   "title": "Src",
-                  "description": "Image src",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
                 },
                 "title": {
                   "type": "string",
                   "title": "Title",
-                  "description": "Title",
-                },
-                "description": {
-                  "type": "string",
-                  "title": "Description",
-                  "description": "Description and Image alt text",
                 },
               },
               "required": [
                 "src",
+                "link",
                 "title",
-                "description",
               ],
             },
             "title": "Features",

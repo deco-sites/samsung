@@ -1,9 +1,4 @@
 import type { h } from "preact";
-import Alert from "$components/Alert.tsx";
-// import StoreLogo from "$components/icons/StoreLogo.tsx";
-import Searchbar, {
-  Props as SearchbarProps,
-} from "$components/search/Searchbar.tsx";
 import Icon from "$components/ui/Icon.tsx";
 
 import CartButton from "../islands/CartButton.tsx";

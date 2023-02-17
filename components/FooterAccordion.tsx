@@ -1,145 +1,114 @@
 import Icon from "./ui/Icon.tsx";
 
-export const sections = [
+export const footer = [
   {
-    label: "Sobre",
-    content: (
-      <div class="flex flex-col">
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Quem somos
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Privacidade e segurança
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Termos de uso
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Trabalhe Conosco
-        </a>
-      </div>
-    ),
+    "name": "Sobre",
+    "items": [
+      {"text": "Smartphones", "link": "#"},
+      {"text": "Tablets", "link": "#"},
+      {"text": "Informática", "link": "#"},
+      {"text": "Aúdio", "link": "#"},
+      {"text": "Watches", "link": "#"},
+      {"text": "Smart Switch", "link": "#"},
+      {"text": "Acessórios", "link": "#"},
+      {"text": "TVs", "link": "#"},
+      {"text": "Lifestyle TVs", "link": "#"},
+      {"text": "Som", "link": "#"},
+      {"text": "Geladeiras", "link": "#"},
+      {"text": "Lavanderia", "link": "#"},
+      {"text": "Ar-Condicionado", "link": "#"},
+      {"text": "Monitores", "link": "#"},
+      {"text": "Aspiradores", "link": "#"},
+      
+    ]
   },
   {
-    label: "Atendimento",
-    content: (
-      <div class="flex flex-col">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="mb-4 text-white text-xs"
-          href="#"
-        >
-          Central de Atendimento
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Fale conosco pelo WhatsApp
-        </a>
-        <a
-          target="_blank"
-          class="mb-4 text-white text-xs"
-          rel="noopener noreferrer"
-          href="#"
-        >
-          Troca e Devolução
-        </a>
-      </div>
-    ),
+    "name": "Loja Online",
+    "items": [
+      {"text": "Promoções", "link": "#"},
+      {"text": "Smartphones", "link": "#"},
+      {"text": "Tablets ", "link": "#"},
+      {"text": "Televisores ", "link": "#"},
+      {"text": "Eletrodomésticos ", "link": "#"},
+      {"text": "Ajuda para Comprar ", "link": "#"},
+      {"text": "Perguntas Frequentes", "link": "#"},
+      {"text": "Samsung Rewards ", "link": "#"},
+      {"text": "Consulte o status do seu pedido ", "link": "#"},
+      {"text": "Política de devolução", "link": ""},
+      {"text": "Privacidade Loja Online", "link": ""},
+      {"text": "Samsung para Estudantes ", "link": ""},
+      {"text": "Samsung para Empresas  ", "link": ""},
+      {"text": "Explore ", "link": ""},
+      {"text": "Avalie a experiência de compra  ", "link": ""},
+    ]
   },
   {
-    label: "Minha Conta",
-    content: (
-      <div class="flex flex-col">
-        <a
-          href="#"
-          class="mb-4 text-white text-xs"
-        >
-          Login/Cadastro
-        </a>
-        <a
-          href="#"
-          class="mb-4 text-white text-xs"
-        >
-          Meus pedidos
-        </a>
-      </div>
-    ),
-  },
-  {
-    label: "Formas de Pagamento",
-    content: (
-      <div class="flex flex-col pb-4">
-        <div class="text-white mb-3 text-xs">
-          Pagamento por Pix
-        </div>
-        <div class="mb-3">
-          <Icon id="Pix" width="44.39px" height="16px" />
-        </div>
-        <div class="text-white mt-3 text-xs">
-          Cartão de Crédito
-        </div>
-        <ul class="flex flex-row flex-wrap justify-start mt-1">
-          <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <Icon id="Visa" width="20px" height="6.46px" />
-          </li>
-          <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <Icon id="Diners" width="16px" height="13.83px" />
-          </li>
-          <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <Icon id="Mastercard" width="20px" height="16.09px" />
-          </li>
-          <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <Icon id="Amex" width="16px" height="10.57px" />
-          </li>
-          <li class="w-8 h-8 flex items-center justify-center mr-[4px] mb-[4px] last:m-0">
-            <Icon id="Elo" width="20px" height="7.66px" />
-          </li>
-        </ul>
-      </div>
-    ),
-  },
-];
+    "name": "Suporte",
+    "items": [
+      {"text": "Suporte de Produtos", "link": ""},
+      {"text": "Agendar Reparo", "link": ""},
+      {"text": "Acompanhar Reparo", "link": ""},
+      {"text": "Telefones", "link": ""},
+      {"text": "Contatos Online", "link": ""},
+      {"text": "Centro de Serviços", "link": ""},
+      {"text": "Informações de Garantia", "link": ""},
+      {"text": "Comunidade", "link": ""},
+      {"text": "E-mail para o CEO", "link": ""},
 
-function FooterAccordion() {
-  return (
-    <div class="w-full py-3 bg-[#353535]">
-      {sections.map(({ label, content }) => (
-        <div key={label}>
-          <details class="w-full cursor-pointer flex flex-row justify-between focus:outline-none">
-            <summary class="text-white px-6 py-2">{label}</summary>
-            <div class="px-8 text-sm text-gray-100">
-              {content}
-            </div>
-          </details>
-        </div>
-      ))}
+    ]
+  },
+  {
+    "name": "Quem Somos",
+    "items": [
+      {"text": "Informações da empresa", "link": ""},
+      {"text": "Área de negócios", "link": ""},
+      {"text": "Identidade da marca", "link": ""},
+      {"text": "Carreiras", "link": ""},
+      {"text": "Relações com investidores ", "link": ""},
+      {"text": "Notícias ", "link": ""},
+      {"text": "Ética", "link": ""},
+      {"text": "Design Samsung ", "link": ""},
+    ]
+  },
+  {
+    "name": "Sustentabilidade",
+    "items": [
+      {"text": "Visão geral", "link": ""},
+      {"text": "Meio ambiente", "link": ""},
+      {"text": "Cidadania corporativa", "link": ""},
+      {"text": "Responsabilidade digital", "link": ""},
+      {"text": "Segurança e Privacidade", "link": ""},
+      {"text": "Acessibilidade", "link": ""},
+      {"text": "Trabalho e direitos humanos", "link": ""},
+      {"text": "Diversidade e inclusão", "link": ""},
+      {"text": "Cadeia de suprimentos sustentável", "link": ""},
+    ]
+  }
+]
+
+function FooterAccordion(){
+  console.log(footer)
+  return(
+    <div class="w-full py-3 flex justify-between">
+      {footer.map(obj => {
+        return(
+          <div>
+            <h3 class="font-bold text-[18px]">{obj.name}</h3>
+            <ul>
+              {
+                obj.items.map(item => {
+                  return(
+                    <li><a href={item.link}>{item.text}</a></li>
+                  )
+                })
+              }
+            </ul>
+          </div>
+        )
+      })
+      }
     </div>
-  );
+  )
 }
 
 export default FooterAccordion;
