@@ -97,16 +97,10 @@ function Navbar({items} : NavProps) {
 }
 
 export interface Props {
-  /** @title Search Bar */
-  searchbar?: SearchbarProps;
-  /**
-   * @title Navigation items
-   * @description Navigation items used both on mobile and desktop menus
-   */
   navItems?: Item[];
 }
 
-function Header({ searchbar, navItems = item }: Props) {
+function Header({navItems = item }: Props) {
   return (
     <header class="max-w-[1440px] m-auto">
       <Navbar items={navItems} />
