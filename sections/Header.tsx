@@ -9,24 +9,12 @@ import type { NavItem as Item } from "$components/header/NavItem.ts";
 
 const item: Item[] = [
   {
-    label: "Masculino",
-    href: "/masculino",
+    label: "Tablets",
+    href: "/mobile/tablet",
     children: [
-      { label: "Polos", href: "/masculino/polos" },
-      { label: "Shorts", href: "/masculino/shorts" },
+      { label: "Polos", href: "/mobile/tablet" },
+      { label: "Shorts", href: "/mobile/tablet" },
     ],
-  },
-  {
-    label: "Feminino",
-    href: "/feminino",
-    children: [
-      { label: "Roupas", href: "/feminino/roupas" },
-    ],
-  },
-  {
-    label: "Brindes",
-    href: "/brindes",
-    children: [],
   },
 ];
 

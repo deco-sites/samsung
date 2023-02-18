@@ -86,19 +86,20 @@ export const footer = [
   }
 ]
 
-function FooterAccordion(){
-  console.log(footer)
+export function FooterAccordion(){
   return(
-    <div class="w-full py-3 flex justify-between">
+    <div class={`w-full flex justify-between border-y-1 border-[#ccc]`}>
       {footer.map(obj => {
         return(
-          <div>
-            <h3 class="font-bold text-[18px]">{obj.name}</h3>
+          <div class={`w-[${100 / footer.length}%] p-6 border-r-1 border-[#d9d9d9] last-of-type:border-r-0`}>
+            <h3 class="font-bold text-[18px] mb-[16px]">{obj.name}</h3>
             <ul>
               {
                 obj.items.map(item => {
                   return(
-                    <li><a href={item.link}>{item.text}</a></li>
+                    <li class="text-[14px] py-[7px]">
+                      <a href={item.link}>{item.text}</a>
+                    </li>
                   )
                 })
               }
@@ -111,4 +112,30 @@ function FooterAccordion(){
   )
 }
 
-export default FooterAccordion;
+export function FooterAccordionMobile(){
+  return(
+    <div class={`w-full flex-col justify-between border-t-1 border-[#ccc] pt-2.5`}>
+      {footer.map(obj => {
+        return(
+          <details class={`w-full px-6 py-3 border-r-1 border-[#d9d9d9] last-of-type:border-r-0`}>
+            <summary class="block border-b-1 border-[#ccc]">
+              <h3 class="font-bold text-[18px] mb-[16px]">{obj.name}</h3>
+            </summary>
+            <ul>
+              {
+                obj.items.map(item => {
+                  return(
+                    <li class="text-[14px] py-[7px]">
+                      <a href={item.link}>{item.text}</a>
+                    </li>
+                  )
+                })
+              }
+            </ul>
+          </details>
+        )
+      })
+      }
+    </div>
+  )
+}

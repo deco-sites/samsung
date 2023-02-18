@@ -12,7 +12,6 @@ export interface Props {
 function SearchControls({ page }: Props) {
   const modalRef = useRef<HTMLDialogElement | null>(null);
   const filters = page?.filters;
-  console.log(page)
 
   if (!filters || filters.length === 0) {
     return null;
