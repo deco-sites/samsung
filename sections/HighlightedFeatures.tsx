@@ -15,18 +15,17 @@ export default function HighlightedFeatures(
   { features }: Props,
 ) {
   return (
-    <section class="max-w-[1440px] m-auto flex flex-row flex-wrap py-8 justify-between items-center mt-[-54px]">
+    <section class="max-w-[1440px] m-auto flex flex-row overflow-auto py-8 justify-between items-center mt-[-54px]">
       {features.map(({ src, title, link }) => (
         <a href={link} key={title} class="p-6 flex flex-col items-center">
           <Image
-            sizes="(min-width: 59px) 59px, 100vw"
             data-main-image=""
             style="object-fit:cover;opacity:1"
             width={100}
             height={100}
             src={src}
             alt={title}
-            class=""
+            class="min-w-[100px]"
             decoding="async"
             loading="lazy"
           />

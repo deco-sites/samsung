@@ -19,6 +19,7 @@ export default function ProductCard({
   name,
   image,
   offers,
+  isVariantOf
 }: Product) {
   const img = image?.[0];
   const offer = offers?.offers[0];
@@ -28,6 +29,12 @@ export default function ProductCard({
   );
   const price = offer?.price;
   const installment = offer?.priceSpecification.reduce(bestInstallment, null);
+
+  let nameOfProduct = ""
+
+  if(isVariantOf){
+    nameOfProduct = isVariantOf?.name! + " " + name
+  }
 
   return (
     <div
@@ -41,7 +48,7 @@ export default function ProductCard({
               style={{ textOverflow: "ellipsis" }}
               href={url}
             >
-              {name.replace(/(.*)(\-).*$/, "$1$2")}
+              {nameOfProduct.replace(/(.*)(\-).*$/, "$1$2")}
             </div>
           )}
         {img && img.url && (

@@ -4,6 +4,7 @@ import SortSelector from "$components/search/SortSelector.tsx";
 import Modal from "$components/ui/Modal.tsx";
 import type { ProductListingPage } from "$live/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/std/types.ts";
+import Heading from "$components/Heading.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage>;
@@ -34,6 +35,7 @@ function SearchControls({ page }: Props) {
           <h2 class="text-center text-sm md:text-2xl">
             Resultados da Busca
           </h2>
+          <Heading />
         </div>
         <div class="flex flex-row justify-end">
           <SortSelector />
