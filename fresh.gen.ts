@@ -13,12 +13,13 @@ import * as $5 from "./routes/inspect-vscode.ts";
 import * as $$0 from "./islands/AddToCart.tsx";
 import * as $$1 from "./islands/CartButton.tsx";
 import * as $$2 from "./islands/CartModal.tsx";
-import * as $$3 from "./islands/LiveControls.tsx";
-import * as $$4 from "./islands/NewSearch.tsx";
-import * as $$5 from "./islands/ProductInformation.tsx";
-import * as $$6 from "./islands/SearchBar.tsx";
-import * as $$7 from "./islands/SearchControls.tsx";
-import * as $$8 from "./islands/Slider.tsx";
+import * as $$3 from "./islands/Filters.tsx";
+import * as $$4 from "./islands/LiveControls.tsx";
+import * as $$5 from "./islands/NewSearch.tsx";
+import * as $$6 from "./islands/ProductInformation.tsx";
+import * as $$7 from "./islands/SearchBar.tsx";
+import * as $$8 from "./islands/SearchControls.tsx";
+import * as $$9 from "./islands/Slider.tsx";
 import * as $$$0 from "./sections/Banner.tsx";
 import * as $$$1 from "./sections/BannnerGrid.tsx";
 import * as $$$2 from "./sections/Button.story.tsx";
@@ -60,12 +61,13 @@ const manifest: DecoManifest = {
     "./islands/AddToCart.tsx": $$0,
     "./islands/CartButton.tsx": $$1,
     "./islands/CartModal.tsx": $$2,
-    "./islands/LiveControls.tsx": $$3,
-    "./islands/NewSearch.tsx": $$4,
-    "./islands/ProductInformation.tsx": $$5,
-    "./islands/SearchBar.tsx": $$6,
-    "./islands/SearchControls.tsx": $$7,
-    "./islands/Slider.tsx": $$8,
+    "./islands/Filters.tsx": $$3,
+    "./islands/LiveControls.tsx": $$4,
+    "./islands/NewSearch.tsx": $$5,
+    "./islands/ProductInformation.tsx": $$6,
+    "./islands/SearchBar.tsx": $$7,
+    "./islands/SearchControls.tsx": $$8,
+    "./islands/Slider.tsx": $$9,
   },
   sections: {
     "./sections/Banner.tsx": $$$0,
@@ -413,8 +415,31 @@ const manifest: DecoManifest = {
             },
             "title": "Nav Items",
           },
+          "alerts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text",
+                },
+                "link": {
+                  "type": "string",
+                  "title": "Link",
+                },
+              },
+              "required": [
+                "text",
+                "link",
+              ],
+            },
+            "title": "Alerts",
+          },
         },
-        "required": [],
+        "required": [
+          "alerts",
+        ],
       },
       "outputSchema": null,
     },

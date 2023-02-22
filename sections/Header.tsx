@@ -1,5 +1,6 @@
 import type { h } from "preact";
 import Icon from "$components/ui/Icon.tsx";
+import Alert from "$components/Alert.tsx"
 
 import CartButton from "../islands/CartButton.tsx";
 import CartModal from "../islands/CartModal.tsx";
@@ -81,13 +82,15 @@ function Navbar({items} : NavProps) {
 
 export interface Props {
   navItems?: Item[];
+  alerts: {text: string; link: string}[];
 }
 
-function Header({navItems = item }: Props) {
+function Header({navItems = item, alerts }: Props) {
   return (
     <header class="max-w-[1440px] m-auto">
       <Navbar items={navItems} />
       <CartModal />
+      <Alert alerts={alerts}/>
     </header>
   );
 }

@@ -10,8 +10,9 @@ export interface Props {
 
 export default function ProductShelf({
   title,
-  products,
+  products
 }: Props) {
+
   return (
     <section class="max-w-[1440px] w-full p-6 md:p-3 md:pt-6 mx-auto bg-[#f7f7f7]">
       {title && <h2 class="text-center font-bold mb-8 text-[28px] md:text-[38px]">{title}</h2>}

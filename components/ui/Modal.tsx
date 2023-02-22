@@ -63,7 +63,7 @@ const Modal = forwardRef<HTMLDialogElement, Props>(({
       onClick={onDialogClick}
     >
       <div
-        class={`py-8 px-6 h-full bg-white ${corners} flex flex-col justify-between divide-y`}
+        class={`py-8 px-6 h-full bg-white ${corners} flex flex-col divide-y`}
       >
         <>
           <div class="pb-4 flex justify-between">

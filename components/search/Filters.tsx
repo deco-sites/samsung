@@ -7,8 +7,8 @@ interface Props {
 
 export default function Filters({ filters }: Props) {
   return (
-    <div class="h-full flex flex-col">
-      <div class="flex flex-col overflow-scroll flex-1">
+    <div class="flex flex-col">
+      <div class="flex flex-col flex-1">
         {filters.map((filter) => {
           if (filter["@type"] !== "FilterToggle") {
             return null;
@@ -20,21 +20,18 @@ export default function Filters({ filters }: Props) {
           );
 
           return (
-            <div class="flex flex-col mt-2 w-full">
-              <span>
-                <span class="text-lg font-bold mt-2">{filter.label}</span>
-                <span class="text-gray-500 ml-1">
-                  {selectedFacetsQuantity || null}
-                </span>
-              </span>
+            <details class="flex flex-col w-full">
+              <summary class="flex justify-between block cursor-pointer text-[16px] uppercase p-[20px] border-b-1 border-[#dedede]">
+                <span class="font-medium mt-2">{filter.label}</span>
+                <span>+</span>
+              </summary>
               <div
-                class="max-h-40 overflow-scroll"
                 style={filter.values.length > 7
                   ? { boxShadow: "inset 0 -10px 10px -10px #b2b2b2" }
                   : undefined}
               >
                 {filter.values.map((value) => (
-                  <div class="flex flex-row">
+                  <div class="flex flex-row p-[20px] border-b-1 border-[#dedede]">
                     <input
                       id={`${filter.key}:${value.value}`}
                       class="mr-2"
@@ -44,17 +41,14 @@ export default function Filters({ filters }: Props) {
                     />
                     <label
                       for={`${filter.key}:${value.value}`}
-                      class="cursor-pointer"
+                      class="cursor-pointer text-[#9e9e9e] font-semibold"
                     >
                       <span>{value.label}</span>
-                      <span class="font-italic ml-2">
-                        ({value.quantity})
-                      </span>
                     </label>
                   </div>
                 ))}
               </div>
-            </div>
+            </details>
           );
         })}
       </div>

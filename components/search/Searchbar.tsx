@@ -36,7 +36,7 @@ export interface Props {
 }
 
 function Searchbar({
-  placeholder = "What are you looking for?",
+  placeholder = "Galaxy",
   action = "/search",
   name = "q",
   query,
@@ -45,10 +45,10 @@ function Searchbar({
     <form
       id="searchbar"
       action={action}
-      class="flex flex-row px-2 py-0 sm:p-2 text-sm text-left border rounded sm:min-w-[400px]"
+      class="flex flex-row px-2 py-0 sm:p-2 text-sm text-left sm:min-w-[700px]"
     >
       <input
-        class="flex-grow px-2 outline-none"
+        class="flex-grow px-2 outline-none rounded-[22px] bg-[#f4f4f4]"
         name={name}
         defaultValue={query}
         placeholder={placeholder}
