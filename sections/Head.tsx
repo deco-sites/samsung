@@ -38,7 +38,10 @@ export default function HeadComponent(props: Props) {
   }
   return (
     <Head>
-      <title>{title}</title>
+      {
+        title != " " && <title>{title}</title>
+      }
+      
       <meta name="theme-color" content={themeColor}></meta>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />

@@ -107,6 +107,9 @@ export default function ProductDetails({ page }: Props) {
       <Head>
         <ScriptLDJson {...page.product} />
         <ScriptLDJson {...page.breadcrumbList} />
+        <title>{name?.includes(isVariantOf?.name ?? "")
+                ? name
+                : `${isVariantOf?.name ?? ""} - ${name}`}</title>
       </Head>
       <section class="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row flex-wrap">
         <div class="w-full p-3 flex justify-between">
@@ -130,10 +133,10 @@ export default function ProductDetails({ page }: Props) {
             ))}
           </div>
         </div>
-        <div class="w-full lg:w-3/5 flex justify-center items-center">
+        <div class="w-full lg:w-3/5 flex justify-center items-start mt-[50px]">
           {image && (
             <Image
-              class="object-contain col-span-4 lg:w-[600px] w-full h-full"
+              class="object-contain col-span-4 w-[400px] mx-auto"
               sizes="(max-width: 640px) 100vw, 25vw"
               src={image[0].url!}
               alt={image[0].alternateName!}

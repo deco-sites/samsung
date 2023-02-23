@@ -5,6 +5,7 @@ const options: Omit<Options, "selfURL"> = {
   plugins: {
     "fillwhite": {"fill": "white"},
     "fillblack": {"fill": "black"},
+    "shadow-inset": {"box-shadow" : "inset 0 0 0 1px #e5e5e5" },
     "slide-left": animation("0.4s ease normal", {
       from: { transform: "translateX(100%)" },
       to: { transform: "translateX(0)" },

@@ -40,20 +40,24 @@ export default function SKUSelector(
     return acc;
   }, {} as Record<string, Record<string, string>>);
 
+  const selected = allProperties?.map(possibility => {
+    console.log(possibility)
+  })
+
   return (
-    <div class="flex flex-col justify-between py-2 md:w-1/4">
+    <div class="flex flex-col justify-between py-2">
       {Object.keys(possibilities).map((name) => (
         <div class="flex flex-col gap-4">
           <label class="font-semibold text-[22px]" for={name}>{name}</label>
-          <select id={name} {...onChange}>
+          <div class="flex flex-wrap" id={name} {...onChange}>
             {Object.entries(possibilities[name]).map(([url, value]) => {
               return (
-                <option key={url} value={url} selected={url === currentUrl}>
+                <a key={url} class={`block w-[40%] p-4 text-[14px] rounded-[6px] m-2.5 ${url == currentUrl ? "border-2 border-blue-500" : "shadow-inset"}`} href={url} selected={url === currentUrl}>
                   {value}
-                </option>
+                </a>
               );
             })}
-          </select>
+          </div>
         </div>
       ))}
     </div>
