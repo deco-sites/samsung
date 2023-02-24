@@ -19,19 +19,43 @@ const item: Item[] = [
   },
 ];
 
-function NavItem({
-  href,
-  children,
-}: h.JSX.HTMLAttributes<HTMLLIElement>) {
+function NavItem(itemProps: Item) {
   return (
-    <a
-      href={href ?? `/search?ft=${children}`}
-      class="flex items-center text-[15px] font-bold px-8 lg:px-6"
-    >
-      <span class="hover:border-black border-solid border-b border-white">
-        {children}
-      </span>
-    </a>
+    <div class="relative overflow-hidden hover:overflow-visible">
+      <a
+        href={itemProps.href ?? `/search?ft=${itemProps.label}`}
+        class="flex items-center font-bold px-1"
+      >
+        <span class="hover:bg-black hover:text-white px-2 py-1 text-[14px] rounded-[20px]">
+          {itemProps.label}
+        </span>
+      </a>
+      {
+        itemProps.children && <div class="bg-white p-6 z-10 absolute flex gap-10 max-inline rounded-b-[16px]">
+        {
+          itemProps.children.map(child => {
+            return (
+              <div class="">
+                <a href={child.href} class="font-bold text-[14px]">{child.label}</a>
+                {
+                  child.childrenOfChildren && <ul class="flex flex-col gap-2 mt-3">
+                    {
+                      child.childrenOfChildren.map(childOfChild => {
+                        return(
+                          <a href={childOfChild.href} class="text-[12px] hover:font-bold">{childOfChild.label}</a>
+                        )
+                      })
+                    }
+                  </ul>  
+                }
+              </div>
+            )
+          })
+        }
+      </div>
+      }
+      
+    </div>
   );
 }
 
@@ -68,8 +92,12 @@ function Navbar({items} : NavProps) {
         <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3">
           <img src="/logo.png" alt="Logo Samsung" />
         </a>
-        <div class="flex justify-center md:justify-between pl-12 h-14">
-          {items.map((item) => <NavItem {...item} />)}
+        <div class="flex justify-center items-center md:justify-between h-14">
+          {items.map((item) => {
+            return(
+              <NavItem {...item} />
+            )
+          })}
         </div>
         <div class="flex-1 flex items-center justify-end gap-6">
           <NewSearch />

@@ -4,6 +4,10 @@ export interface NavItem {
     children?: Array<{
       label?: string;
       href?: string;
+      childrenOfChildren?: Array<{
+        label?: string;
+        href?: string;
+      }>;
     }>;
   }
   

@@ -403,6 +403,30 @@ const manifest: DecoManifest = {
                         ],
                         "title": "Href",
                       },
+                      "childrenOfChildren": {
+                        "title": "Children Of Children",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": [
+                                "string",
+                                "null",
+                              ],
+                              "title": "Label",
+                            },
+                            "href": {
+                              "type": [
+                                "string",
+                                "null",
+                              ],
+                              "title": "Href",
+                            },
+                          },
+                          "required": [],
+                        },
+                      },
                     },
                     "required": [],
                   },
