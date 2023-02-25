@@ -59,7 +59,10 @@ body{
     right: 0px;
 }
 
-
 #menu-mobile details:not([open])#menu-hamburguer > div{
     right: -100%;
+}
+
+details[open] > summary > #marker{
+    transform: rotate(90deg);
 }

@@ -118,8 +118,11 @@ export function FooterAccordionMobile(){
       {footer.map(obj => {
         return(
           <details class={`w-full px-6 py-3 border-r-1 border-[#d9d9d9] last-of-type:border-r-0`}>
-            <summary class="block border-b-1 border-[#ccc]">
-              <h3 class="font-bold text-[18px] mb-[16px]">{obj.name}</h3>
+            <summary class="flex justify-between items-center border-b-1 border-[#ccc] pb-[16px]">
+              <h3 class="font-bold text-[18px]">{obj.name}</h3>
+              <span id="marker" class="text-[20px] px-3">
+                &gt;
+              </span>
             </summary>
             <ul>
               {

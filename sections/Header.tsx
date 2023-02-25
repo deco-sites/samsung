@@ -72,7 +72,7 @@ function NavItemMobile(itemProps: Item) {
             </span>
           </a>
           {
-            itemProps.children && <span class="text-[20px] px-3">
+            itemProps.children && <span id="marker" class="text-[20px] px-3">
               &gt;
             </span>
           }
@@ -86,7 +86,7 @@ function NavItemMobile(itemProps: Item) {
                   <summary class="flex justify-between items-center">
                     <a href={child.href} class=" text-[14px]">{child.label}</a>
                     {
-                      child.childrenOfChildren && <span class="text-[18px] px-3">
+                      child.childrenOfChildren && <span id="marker" class="text-[18px] px-3">
                         &gt;
                       </span>
                     }

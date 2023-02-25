@@ -15,6 +15,10 @@ export default function Heading(){
 
         if(window.location?.href.includes("search")){
             headingText = urlSearchParams.get("q") ?? ""
+        }else{
+            const url = window.location?.href
+            headingText = url?.slice(url.lastIndexOf("/") + 1)
+            console.log("headingText")
         }
         
         return headingText;
