@@ -153,47 +153,53 @@ export default function ProductDetails({ page }: Props) {
                 : `${isVariantOf?.name ?? ""} - ${name}`}
             </h1>
           </div>
-          <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
+          <div className="p-10 flex flex-row justify-between items-center">
             <div class="flex flex-col w-full">
-              {listPrice && (
-                <div>
-                  <span class="line-through">
-                    De:
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(listPrice.price)}
-                  </span>
-                </div>
-              )}
-              {price && (
-                <div>
-                  <span class="">Por:</span>
-                  <span class="">
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(price)}
-                  </span>
-                </div>
-              )}
-              {installment && price && (
-                <span className="text-gray-600">
-                  {installmentToString(installment, price)}
-                </span>
-              )}
               <div class="flex flex-col justify-between py-3 w-full">
                 <SKUSelector product={page.product} />
               </div>
             </div>
           </div>
-          {seller && (
-            <div className="border-b border-solid border-gray-300 p-10 flex flex-row justify-between items-center">
-              <AddToCart skuId={productID} sellerId={seller} />
+          <div>
+            <div>
+              <strong>{isVariantOf?.name}</strong>
+              <p>{name}</p>
             </div>
-          )}
+            {listPrice && (
+              <div>
+                <span class="line-through">
+                  De:
+                  {new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  }).format(listPrice.price)}
+                </span>
+              </div>
+            )}
+            {price && (
+              <div>
+                <span class="">Por:</span>
+                <span class="">
+                  {new Intl.NumberFormat("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  }).format(price)}
+                </span>
+              </div>
+            )}
+            {installment && price && (
+              <span className="text-gray-600">
+                {installmentToString(installment, price)}
+              </span>
+            )}
+            {seller && (
+              <div className="p-10 flex flex-row justify-between items-center">
+                <AddToCart skuId={productID} sellerId={seller} />
+              </div>
+            )}
+          </div>
           {description && (
-            <div class="border-b border-solid border-gray-300 p-10 flex flex-col justify-center items-center">
+            <div class="p-10 flex flex-col justify-center items-center">
               <ProductInformation description={description} />
             </div>
           )}

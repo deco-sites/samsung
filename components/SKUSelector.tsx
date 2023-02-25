@@ -4,62 +4,108 @@ interface Props {
   product: Product;
 }
 
-interface properties {
-  property?: property[]
-}
-
-interface property{
-  name?: string;
-  values?: string[];
-}
-
 // Navigates the user the the choosen sku
 const onChange = {
   onchange: "(function(e){  window.location.href = e.target.value; })(event)",
 };
 
 export default function SKUSelector(
-  { product: { isVariantOf, url: currentUrl } }: Props,
+  { product }: Props,
 ) {
 
-  const allProperties = (isVariantOf?.hasVariant ?? [])
-    .flatMap(({ additionalProperty = [], url }) =>
-      additionalProperty.map((property) => ({ property, url }))
-    );
+  let selected = product.additionalProperty
+  const attributes : any[] = []
+  let options : any[] = []
+  let allProperties : any[] = []
+  let currentAlreadyAdded = false
 
-  const possibilities = allProperties.reduce((acc, { property, url }) => {
-    const { name = "", value = "" } = property;
+  const currentUrl = product.url
+  
+  product.isVariantOf?.hasVariant.map(variant => {
 
-    if (url) {
-      acc[name] = {
-        ...acc[name],
-        [url]: value,
-      };
+    let variantOption = false
+    
+    variant.additionalProperty?.forEach(property => {
+      let name = property.name
+      let value = property.value
+
+      selected?.forEach(selectedProperty =>{
+        let nameSelected = selectedProperty.name
+        let valueSelected = selectedProperty.value
+
+        if(nameSelected == name && valueSelected == value){
+          variantOption = true
+        }
+      })
+
+      if(!allProperties.includes(name)){
+        allProperties.push(name)
+      }
+    })
+
+    if(variantOption){
+      attributes.push({variant: variant.additionalProperty!, "url": variant.url!})
     }
 
-    return acc;
-  }, {} as Record<string, Record<string, string>>);
-
-  const selected = allProperties?.map(possibility => {
-    console.log(possibility)
   })
+
+  selected?.forEach(selected => {
+    console.log(selected.name)
+
+    attributes?.forEach(attribute => {
+      let isAnOption
+
+      attribute.variant.forEach((variant: { name: string|undefined; value: string|undefined; }) => {
+        if(selected.name == variant.name && selected.value == variant.value){
+          isAnOption = true
+        }
+      })
+
+      attribute.variant.forEach((variant: { name: string|undefined; value: string|undefined; }) => {
+        if(selected.name == variant.name && selected.value != variant.value){
+          options.push({'variant': variant, 'url': attribute.url })
+        }
+      })
+
+      if(attribute.url == currentUrl && currentAlreadyAdded ==  false){
+        attribute.variant.forEach((variant : any) => {
+          options.push({'variant': variant, 'url': attribute.url })
+        })
+  
+        currentAlreadyAdded = true
+      }
+
+    });
+  }) 
+
+  console.log(options)
+
 
   return (
     <div class="flex flex-col justify-between py-2">
-      {Object.keys(possibilities).map((name) => (
-        <div class="flex flex-col gap-4">
-          <label class="font-semibold text-[22px]" for={name}>{name}</label>
-          <div class="flex flex-wrap" id={name} {...onChange}>
-            {Object.entries(possibilities[name]).map(([url, value]) => {
-              return (
-                <a key={url} class={`block w-[40%] p-4 text-[14px] rounded-[6px] m-2.5 ${url == currentUrl ? "border-2 border-blue-500" : "shadow-inset"}`} href={url} selected={url === currentUrl}>
-                  {value}
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+      {
+        allProperties?.map(property => {
+          return(
+            <div class="flex flex-col gap-4">
+              <label class="font-semibold text-[22px]">{property}</label>
+              <div class="flex flex-wrap">
+                {
+                  options.map(option => {
+                    const url = option.url
+                    if(option.variant.name == property){
+                      return(
+                        <a key={url} class={`block w-[40%] p-4 text-[14px] rounded-[6px] m-2.5 ${url == currentUrl ? "border-2 border-blue-500" : "shadow-inset"}`} href={url} selected={url === currentUrl}>
+                          {option.variant.value}
+                        </a>
+                      )
+                    }
+                  })
+                }
+              </div>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }
