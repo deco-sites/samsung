@@ -39,17 +39,17 @@ export default function ProductCard({
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full p-2 mb-5 bg-white rounded-[20px]"
+      class="w-full px-2 py-6 mb-5 bg-white rounded-[20px]"
     >
-      <a href={url}>
+      <a href={url} class="block w-full">
         {name && (
-            <div
-              class="block overflow-hidden whitespace-nowrap mb-3 text-center font-bold"
+            <h3
+              class="block overflow-hidden mb-3 text-center font-bold"
               style={{ textOverflow: "ellipsis" }}
               href={url}
             >
               {nameOfProduct.replace(/(.*)(\-).*$/, "$1$2")}
-            </div>
+            </h3>
           )}
         {img && img.url && (
           <Picture>

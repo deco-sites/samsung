@@ -10,11 +10,11 @@ import type { NavItem as Item } from "$components/header/NavItem.ts";
 
 const item: Item[] = [
   {
-    label: "Tablets",
+    label: "Loja Online",
     href: "/mobile/tablet",
     children: [
-      { label: "Polos", href: "/mobile/tablet" },
-      { label: "Shorts", href: "/mobile/tablet" },
+      { label: "Comprar agora", href: "/m" },
+      { label: "Programa de Ofertas", href: "/" },
     ],
   },
 ];
@@ -59,6 +59,60 @@ function NavItem(itemProps: Item) {
   );
 }
 
+function NavItemMobile(itemProps: Item) {
+  return (
+      <details>
+        <summary class="flex justify-between items-center">
+          <a
+            href={itemProps.href ?? `/search?ft=${itemProps.label}`}
+            class="flex items-center px-1"
+          >
+            <span class="px-2 py-3 text-[16px] ">
+              {itemProps.label}
+            </span>
+          </a>
+          {
+            itemProps.children && <span class="text-[20px] px-3">
+              &gt;
+            </span>
+          }
+        </summary>
+        {
+          itemProps.children && <div class="bg-white p-2 z-10 flex flex-col gap-2 max-inline rounded-b-[16px] w-auto min-w-full">
+          {
+            itemProps.children.map(child => {
+              return (
+                <details class="">
+                  <summary class="flex justify-between items-center">
+                    <a href={child.href} class=" text-[14px]">{child.label}</a>
+                    {
+                      child.childrenOfChildren && <span class="text-[18px] px-3">
+                        &gt;
+                      </span>
+                    }
+                  </summary>
+                  
+                  {
+                    child.childrenOfChildren && <ul class="flex flex-col gap-2 mt-3">
+                      {
+                        child.childrenOfChildren.map(childOfChild => {
+                          return(
+                            <a href={childOfChild.href} class="text-[12px] hover:font-bold">{childOfChild.label}</a>
+                          )
+                        })
+                      }
+                    </ul>  
+                  }
+                </details>
+              )
+            })
+          }
+        </div>
+        }
+      </details>
+  );
+}
+
 export interface NavProps{
   items: Item[];
 }
@@ -67,23 +121,33 @@ function Navbar({items} : NavProps) {
   return (
     <>
       {/* Mobile Version */}
-      <section class="md:hidden flex justify-between items-center p-2">
+      <section id="menu-mobile" class="md:hidden flex justify-between items-center p-2">
 
         <a href="/" class="block max-w-[10rem]">
           <img src="/logo.png" alt="Logo Samsung" />
         </a>
         <div class="flex justify-end">
 
-        <NewSearch />
-
+          <NewSearch />
           <CartButton />
-
-          <button
-          aria-label="open menu"
-          class="flex items-center justify-center h-12 w-12"
-          >
-            <Icon id="Bars3" className="w-8 h-8" />
-          </button>
+          <details id="menu-hamburguer">
+            <summary class="block">
+              <div
+              aria-label="open menu"
+              class="flex items-center justify-center h-12 w-12"
+              >
+                <Icon id="Bars3" className="w-8 h-8" />
+              </div>
+            </summary>
+            <div class="bg-white absolute top-0 right-0 z-50 w-full max-w-[360px] h-full p-4 top-[60px]">
+              {items.map((item) => {
+                return(
+                  <NavItemMobile {...item} />
+                )
+              })}
+            </div>
+          </details>
+          
         </div>
       </section>
 

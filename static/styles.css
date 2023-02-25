@@ -50,3 +50,16 @@
 body{
     font-family: SamsungOne,arial,sans-serif;;
 }
+
+#menu-mobile details#menu-hamburguer > div{
+    transition: 1s;
+}
+
+#menu-mobile details[open]#menu-hamburguer > div{
+    right: 0px;
+}
+
+
+#menu-mobile details:not([open])#menu-hamburguer > div{
+    right: -100%;
+}
