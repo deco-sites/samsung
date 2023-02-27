@@ -73,7 +73,7 @@ export const installmentToString = (
 
   const withTaxes = sellingPrice < price;
 
-  return `${billingDuration} de R$ ${billingIncrement} ${
+  return `${billingDuration}x de R$ ${billingIncrement} ${
     withTaxes ? "com juros" : "s/ juros"
   }`;
 };
@@ -111,7 +111,7 @@ export default function ProductDetails({ page }: Props) {
                 ? name
                 : `${isVariantOf?.name ?? ""} - ${name}`}</title>
       </Head>
-      <section class="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row flex-wrap">
+      <section class="max-w-[1440px] w-full mx-auto flex flex-col lg:flex-row flex-wrap mb-10">
         <div class="w-full p-3 flex justify-between">
           <div>
             {itemListElement.map(({ item, position, name }) => (
@@ -153,47 +153,38 @@ export default function ProductDetails({ page }: Props) {
                 : `${isVariantOf?.name ?? ""} - ${name}`}
             </h1>
           </div>
-          <div className="p-10 flex flex-row justify-between items-center">
+          <div className="px-10 py-5 flex flex-row justify-between items-center">
             <div class="flex flex-col w-full">
               <div class="flex flex-col justify-between py-3 w-full">
                 <SKUSelector product={page.product} />
               </div>
             </div>
           </div>
-          <div>
-            <div>
+          <div class="bg-[#f7f7f7] flex flex-col justify-center p-4">
+            <div class="pb-4 border-b-1 border-[#5c5c5c]">
               <strong>{isVariantOf?.name}</strong>
               <p>{name}</p>
             </div>
-            {listPrice && (
-              <div>
-                <span class="line-through">
-                  De:
-                  {new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(listPrice.price)}
+            <div class="pt-4 text-[24px] text-center">
+              {price && (
+                <div class="font-bold">    
+                  <span class="">
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(price)}
+                  </span>
+                  <span class=""> à vista (10% de desconto)</span>
+                </div>
+              )}
+              {installment && price && (
+                <span className="text-[#2189ff] font-bold text-[14px]">
+                  {installmentToString(installment, price)}
                 </span>
-              </div>
-            )}
-            {price && (
-              <div>
-                <span class="">Por:</span>
-                <span class="">
-                  {new Intl.NumberFormat("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  }).format(price)}
-                </span>
-              </div>
-            )}
-            {installment && price && (
-              <span className="text-gray-600">
-                {installmentToString(installment, price)}
-              </span>
-            )}
+              )}
+            </div>
             {seller && (
-              <div className="p-10 flex flex-row justify-between items-center">
+              <div className="py-4 flex flex-row justify-center items-center">
                 <AddToCart skuId={productID} sellerId={seller} />
               </div>
             )}

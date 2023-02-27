@@ -45,10 +45,10 @@ function Searchbar({
     <form
       id="searchbar"
       action={action}
-      class="flex flex-row px-2 py-0 sm:p-2 text-sm text-left sm:min-w-[700px]"
+      class="flex flex-row px-2 py-0 sm:p-2 text-sm text-left ml-[50px] w-[80%] md:w-auto sm:min-w-[700px] relative h-[40px] md:h-[60px]"
     >
       <input
-        class="flex-grow px-2 outline-none rounded-[22px] bg-[#f4f4f4]"
+        class="flex-grow px-2 outline-none rounded-[22px] bg-[#f4f4f4] pl-10"
         name={name}
         defaultValue={query}
         placeholder={placeholder}
@@ -57,7 +57,7 @@ function Searchbar({
         aria-label="Search"
         htmlFor="searchbar"
         type="submit"
-        class="p-2 outline-none"
+        class="p-2 outline-none absolute"
       >
         <Icon id="MagnifyingGlass" className="w-6 h-6" />
       </button>
