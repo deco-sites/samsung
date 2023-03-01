@@ -36,20 +36,21 @@ export default function BannnerGrid({
                 src={src}
                 width={456}
                 height={325}
-                fetchPriority="high"
+                fetchPriority="low"
               />
               <Source
                 media="(min-width: 768px)"
                 src={src}
                 width={680}
                 height={485}
-                fetchPriority="high"
+                fetchPriority="low"
               />
               <img
                 class="object-cover w-full rounded-[20px]"
                 src={src}
                 alt={alt}
-                loading="eager"
+                loading="lazy"
+                decoding="async"
               />
             </Picture>
 

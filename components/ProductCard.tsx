@@ -59,12 +59,14 @@ export default function ProductCard({
               src={img.url}
               width={180}
               height={180}
+              fetchPriority="low"
             />
             <Source
               media="(min-width: 640px)"
               src={img.url}
               width={180}
               height={180}
+              fetchPriority="low"
             />
             <Image
               class="w-full max-w-full h-auto"
