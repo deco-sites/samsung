@@ -19,7 +19,7 @@ export default function HighlightedFeatures(
     <section class="max-w-[1440px] m-auto flex flex-row overflow-auto py-8 justify-between items-center mt-[-54px]">
       {features.map(({ src, title, link }) => (
         <a href={link} key={title} class="p-6 flex flex-col items-center">
-          <Picture class="inset-0">
+          <Picture class="inset-0" preload>
               <Source
                 src={src}
                 width={456}

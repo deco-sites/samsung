@@ -15,7 +15,7 @@ export const initialProps: Props = {
   description: "70% Off",
   url: "https://fashion.deco.page",
   imageUrl: "https://fashion.deco.page/android-chrome-384x384.png?v=1",
-  faviconUrl: "https://fashion.deco.page/favicon-32x32.png?v=1",
+  faviconUrl: "/faviconsamsung.ico",
   styleUrls: [],
   themeColor: "#221E1F",
 };

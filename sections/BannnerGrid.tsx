@@ -30,7 +30,7 @@ export default function BannnerGrid({
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 text-center">
         {images.map(({ href, src, alt, title, text, cta }) => (
           <a href={href} class="flex flex-col justify-center items-center">
-            <Picture class="inset-0">
+            <Picture class="inset-0" preload>
               <Source
                 media="(max-width: 767px)"
                 src={src}

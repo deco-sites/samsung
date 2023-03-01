@@ -6,7 +6,24 @@ const options: Omit<Options, "selfURL"> = {
     "fillwhite": {"fill": "white"},
     "fillblack": {"fill": "black"},
     "shadow-inset": {"box-shadow" : "inset 0 0 0 1px #e5e5e5" },
-    "max-inline": {"inline-size": "max-content"}
+    "max-inline": {"inline-size": "max-content"},
+    "slide-left": animation("0.4s ease normal", {
+      from: { transform: "translateX(100%)" },
+      to: { transform: "translateX(0)" },
+    }),
+    "slide-right": animation("0.4s ease normal", {
+      from: { transform: "translateX(-100%)" },
+      to: { transform: "translateX(0)" },
+    }),
+    "slide-bottom": animation("0.4s ease normal", {
+      from: { transform: "translateY(100%)" },
+      to: { transform: "translateY(0)" },
+    }),
+    backdrop: css({
+      "&::backdrop": {
+        background: "rgba(0, 0, 0, 0.5)",
+      },
+    }),
   },
   theme: {
     extend: {
