@@ -126,21 +126,7 @@ function Navbar({items} : NavProps) {
       <section id="menu-mobile" class="md:hidden flex justify-between items-center p-2">
 
         <a href="/" class="block max-w-[10rem]">
-          <img src="/logo.png" alt="Logo Samsung" />
-          <Picture class="inset-0" preload>
-              <Source
-                src="/logo.png"
-                width={120}
-                height={32}
-                fetchPriority="high"
-              />
-              <img
-                class=""
-                src="/logo.png"
-                alt="Logo Samsung"
-                loading="eager"
-              />
-            </Picture>
+          <img src="/logo.png" alt="Logo Samsung"/>
         </a>
         <div class="flex justify-end">
 
@@ -170,20 +156,7 @@ function Navbar({items} : NavProps) {
       {/* Desktop Version */}
       <section class="hidden md:flex bg-white flex-row h-[80px] items-center md:border-b border-[#d3d5db] mx-8">
         <a href="/" class="block min-w-[12rem] max-w-[14rem] p-3">
-          <Picture class="inset-0" preload>
-              <Source
-                src="/logo.png"
-                width={120}
-                height={32}
-                fetchPriority="high"
-              />
-              <img
-                class=""
-                src="/logo.png"
-                alt="Logo Samsung"
-                loading="eager"
-              />
-          </Picture>
+          <img src="/logo.png" alt="Logo Samsung"/>
         </a>
         <div class="flex justify-center items-center md:justify-between h-14">
           {items.map((item) => {
