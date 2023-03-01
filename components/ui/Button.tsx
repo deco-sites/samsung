@@ -49,7 +49,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
         sizes[size]
       } ${variants[variant]} ${
         fits[fit]
-      } flex items-center justify-center cursor-pointer transition-colors duration-150 ease-in hover:bg-opacity-80 disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed focus:outline-none`}
+      } flex items-center justify-center cursor-pointer hover:bg-opacity-80 disabled:bg-gray-400 disabled:text-gray-800 disabled:cursor-not-allowed focus:outline-none`}
       {...props}
       ref={ref}
     >
