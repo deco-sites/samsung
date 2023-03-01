@@ -56,7 +56,7 @@ export default function HeadComponent(props: Props) {
       <meta name="theme-color" content="#221E1F"></meta>
       <meta name="msapplication-TileColor" content="#221E1F"></meta>
       {styleUrls?.map((styleUrl: string) => (
-        <link rel="stylesheet" href={asset(styleUrl)}></link>
+        <link rel="stylesheet" href={asset(styleUrl)} media="print" onLoad="this.media='all'"></link>
       ))}
 
 <style
