@@ -48,6 +48,20 @@ const options: Omit<Options, "selfURL"> = {
       "2xl": "1536px",
     },
   },
+  preflight:{
+    '@font-face': [
+      {
+        fontFamily: 'SamsungOne',
+        fontWeight: '400',
+        src: 'url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-400___6d3e20551338d043a1bee670df8e7406.woff2) format("woff")',
+      },
+      {
+        fontFamily: 'SamsungOne',
+        fontWeight: '700',
+        src: 'url(https://samsungbr.vtexassets.com/assets/vtex/assets-builder/samsungbr.store-front/1.3.0-beta.4/fonts/SamsungOne-700___d4d24334ce273547d7065a226338b0c0.woff2) format("woff")',
+      },
+    ],
+  }
 };
 
 export default options;

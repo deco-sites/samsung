@@ -45,13 +45,13 @@ export default function Banner(
             href=""
             class="md:flex md:flex-col md:items-start md:justify-center w-[37.68vw] md:w-[17vw] lg:w-auto"
           >
-            <h2 class="font-sans mb-4 font-bold text-center md:text-left text-[30px] leading-8 md:text-[40px] tracking-wider ">
+            <h2 class="mb-4 font-bold text-center md:text-left text-[30px] leading-8 md:text-[40px] tracking-wider ">
               {title}
             </h2>
-            <div class="font-sans text-[18px] md:text-sm md:pt-2.5 text-center md:text-left mb-2.5">
+            <div class="text-[18px] md:text-sm md:pt-2.5 text-center md:text-left mb-2.5">
               <span>{subtitle}</span>
             </div>
-            <div class="font-sans text-[16px] md:text-sm text-center md:text-left">
+            <div class="text-[16px] md:text-sm text-center md:text-left">
               <span>{text}</span>
             </div>
           </a>

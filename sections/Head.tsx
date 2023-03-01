@@ -58,6 +58,8 @@ export default function HeadComponent(props: Props) {
       {styleUrls?.map((styleUrl: string) => (
         <link rel="stylesheet" href={asset(styleUrl)}></link>
       ))}
+
+      
     </Head>
   );
 }
