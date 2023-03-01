@@ -1,4 +1,5 @@
 import type { h } from "preact";
+import { Picture, Source } from "$live/std/ui/components/Picture.tsx";
 import Icon from "$components/ui/Icon.tsx";
 import Alert from "$components/Alert.tsx"
 
@@ -7,6 +8,7 @@ import CartModal from "../islands/CartModal.tsx";
 import NewSearch from "../islands/NewSearch.tsx";
 
 import type { NavItem as Item } from "$components/header/NavItem.ts";
+
 
 const item: Item[] = [
   {
@@ -125,6 +127,20 @@ function Navbar({items} : NavProps) {
 
         <a href="/" class="block max-w-[10rem]">
           <img src="/logo.png" alt="Logo Samsung" />
+          <Picture class="inset-0" preload>
+              <Source
+                src="/logo.png"
+                width={120}
+                height={32}
+                fetchPriority="high"
+              />
+              <img
+                class=""
+                src="/logo.png"
+                alt="Logo Samsung"
+                loading="eager"
+              />
+            </Picture>
         </a>
         <div class="flex justify-end">
 
